@@ -1,18 +1,7 @@
-pbl-blog
+PBL-Blog
 ========
 
-blog plugin for main pbl portal
-
-# Docker
-
-__backing up database and plugins__
-mount volume for database,
-mount volume for transfer files,
-ssh into container to transfer files,
-__alternative__ transfer files by sending signals?,
-
-__when restarting the new wordpress__
-copy over files, database is from old, start wordpress
+Blog Plugin for core PBL Portal
 
 # Backup Procedure
 
@@ -35,3 +24,7 @@ __on work machine__
 	* `mysql wordpress < /app/backup`
 * start `-d` real container with mounts to __app__ _and_ __mysql__
 	* `docker run -d -p <port>:80 -v <mysql_mount>:/var/lib/mysql -v <app_mount_>:/app tutum/wordpress /run.sh`
+
+# Interface
+
+# Box Integration
