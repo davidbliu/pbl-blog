@@ -11,7 +11,7 @@ __on remote machine__
 	* `PID=$(docker inspect --format {{.State.Pid}} <container_name_or_ID>)`
 	* `nsenter --target $PID --mount --uts --ipc --net --pid`
 * backup database to /app/backup_<uid>
-	* `mysql wordpress < /app/backup`
+	* `mysqldump wordpress > /app/backup`
 
 __on work machine__
 * transfer files to safe location (my machine for now)
@@ -33,7 +33,7 @@ __on work machine__
 	* `PID=$(docker inspect --format {{.State.Pid}} <container_name_or_ID>)`
 	* `nsenter --target $PID --mount --uts --ipc --net --pid`
 * backup database to /app/backup_<uid>
-	* `mysql wordpress < /app/backup`
+	* `mysqldump wordpress > /app/backup`
 * copy replace IPs in backup to remote ips
 * scp __app__ and __mysql__ volumes to remote machine
 	* sudo scp -r -i <keypair> <app_path> <remote dns>:<remote_path>
