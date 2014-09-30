@@ -8,8 +8,8 @@ Blog Plugin for core PBL Portal
 __on remote machine__
 * `nsenter` running container
 	* `sudo docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter`
-	* `PID=$(docker inspect --format {{.State.Pid}} <container_name_or_ID>)`
-	* `nsenter --target $PID --mount --uts --ipc --net --pid`
+	* `PID=$(sudo docker inspect --format {{.State.Pid}} <container_name_or_ID>)`
+	* `sudo nsenter --target $PID --mount --uts --ipc --net --pid`
 * backup database to /app/backup_<uid>
 	* `mysqldump wordpress > /app/backup`
 
